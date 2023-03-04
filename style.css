@@ -1,6 +1,7 @@
 @font-face {
 	font-family: "Mishkinshrift";
 	src: url("./fonts/mishkinshrift.ttf") format("ttf");
+	text-rendering: optimizeLegibility;
 }
 
 .body {
