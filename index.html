@@ -1,0 +1,185 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./vendor/normalaize.css">
+    <link rel="stylesheet" href="./style.css">
+
+    <script src="https://unpkg.com/wavesurfer.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+
+    <title>Преодолевая Гэнгсташит</title>
+</head>
+
+<main class="body">
+
+    <div class="topline">
+        <div class="topline__content">
+            <img src="./images/bird.png" alt="" class="bird">
+            <div class="topline__header">
+                <span class="header-first">«Преодолевая</span>
+                <span class="header-second">гэнгсташит»</span>
+            </div>
+            <p class="topline__subtitle">Насколько дерьмовое название, настолько же крутое содержание</p>
+        </div>
+
+    
+    </div>
+    <img src="./images/wire.png" alt="" class="wire">
+
+    <div class="about">
+        <div class="about__text">
+            <h2 class="about__title">Об издании <br> REAL G EDITION</h2>
+            <p class="about__description">Произведение написано в тюремных застенках, но с наглой ухмылкой. Современные реалии делают его не просто книгой воспоминаний, а очень даже актуальной инструкцией. </p>
+        </div>
+        <img src="./images/book.png" alt="" class="about__book">
+        <img src="./images/realG.png" alt="" class="about__realg">
+    </div>
+
+    <div class="about-book">
+        <div class="about-book__container">
+            <img src="./images/book2.png" alt="the book" class="about-book__book">
+            <img src="./images/realG.png" alt="real g" class="about__realg about__realg_about-book">
+            <a href="#buy" class="scrollto"><img src="./images/price.png" alt="price" class="about__price"></a>
+        </div>
+        <div class="about-book__text">
+            <h2 class="about-book__title">О книге</h2>
+            <p class="about-book__description">Первое издание книги вышло настолько ограниченым тиражом, что даже не все из тех кто ее оплатил, стали её обладателями.<br>
+            (Если вы попали в такую ситуацию, свяжитесь с нами по почте).
+                </p>
+            <div class="about-book__button">
+                <a href="https://the-flow.ru/features/free-kass?ysclid=leon25rowf625336791" target="_blank" class="button-link"> Отрывок из книги</a>
+            </div>
+        </div>
+    </div>
+
+    <img src="./images/wire2.png" alt="" class="section-wire">
+
+    <div class="section-title">
+        <span class="section-title__first">REAL G EDITION</span>
+        <span class="section-title__second">выйдет тиражом</span>
+        <br>
+        <span class="section-title__big">999</span>
+        <br>
+        <span class="section-title__big-under">экземпляров</span>
+    </div>
+
+    <div class="info">
+        <img src="./images/elements/first.png" alt="" class="info__first">
+        <img src="./images/elements/second.png" alt="" class="info__second">
+        <img src="./images/elements/third.png" alt="" class="info__third">
+        <img src="./images/elements/fourth.png" alt="" class="info__fourth">
+        <img src="./images/elements/fifth.png" alt="" class="info__fifth">
+    </div>
+
+    <img src="./images/wire2.png" alt="" class="section-wire">
+
+    <div class="section-title">
+        <span class="section-title section-title_author">откровения автора</span>
+    </div>
+
+    <div class="audio-section">
+        <div class="audio-section__audio">
+            <div class="control-bar">
+                <img src="./images/play.png" alt="" class="playBtn">
+                <img src="./images/pause.png" alt="" class="pauseBtn invisible">
+            </div>
+            <div id="waveform"></div>
+        </div>
+        <div class="audio-section__author"></div>
+    </div>
+
+    <div class="section-title section-title_real">
+        <span class="section-title">Издание<br>«REAL G EDITION»<br>продаётся только на этом сайте</span>
+    </div>
+
+    <div class="section-order" id="buy">
+        <div class="order">
+            <h3 class="order__title">Сделать заказ</h3>
+            <form method='POST' action='https://demo.open-processing.ru/create/' class="order__form">
+                <input type='text' name='sum' value='1500' class="order__input invisible"/> <br />
+                <input type='text' name='clientid' placeholder='ФИО' class="order__input" required/> <br />
+                <input type='text' name='client_phone' placeholder='Номер телефона' class="order__input" required/> <br />
+                <input type='text' name='client_email' placeholder='E-mail' class="order__input" required/> <br />
+                <input type='text' name='service_name' placeholder='Адрес доставки' class="order__input" required/> <br />
+                <button type="submit" class="order__submit">Перейти к оплате</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="logos">
+        <img src="./images/logo-1.png" alt="" class="logos__logo">
+        <img src="./images/logo-2.png" alt="" class="logos__logo">
+        <img src="./images/logo-3.png" alt="" class="logos__logo">
+    </div>
+
+</main>
+
+
+
+<body>
+
+  <script>
+    let wavesurfer = {};
+    
+    const playBtn = document.querySelector('.playBtn');
+    const pauseBtn = document.querySelector('.pauseBtn');
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        wavesurfer = WaveSurfer.create({
+            container: document.querySelector('#waveform'),
+            waveColor: 'white',
+            progressColor: 'gray',
+            barWidth: 2,
+            barHeight: 1,
+            barGap: null,
+            responsive: true
+        })
+        wavesurfer.load('audio.ogg');
+    });
+    
+    playBtn.addEventListener('click', () => {
+        wavesurfer.play();
+        pauseBtn.classList.toggle('invisible');
+        playBtn.classList.toggle('invisible');
+    });
+    
+    pauseBtn.addEventListener('click', () => {
+        wavesurfer.pause();
+        pauseBtn.classList.toggle('invisible');
+        playBtn.classList.toggle('invisible');
+    })
+    
+      </script>
+
+<script>
+document.querySelectorAll('a[href^="#"').forEach(link => {
+
+link.addEventListener('click', function(e) {
+    e.preventDefault();
+
+    let href = this.getAttribute('href').substring(1);
+
+    const scrollTarget = document.getElementById(href);
+
+    const topOffset = document.querySelector('.scrollto').offsetHeight;
+    // const topOffset = 0; // если не нужен отступ сверху 
+    const elementPosition = scrollTarget.getBoundingClientRect().top;
+    const offsetPosition = elementPosition - topOffset;
+
+    window.scrollBy({
+        top: offsetPosition,
+        behavior: 'smooth'
+    });
+});
+});
+    </script>
+
+</body>
+</html>
