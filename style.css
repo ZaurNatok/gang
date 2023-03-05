@@ -828,9 +828,14 @@
 }
 
 @media (min-width: 320px) and (max-width: 479px) {
+
+    .topline {
+        height: 60vh;
+    }
+
     .wire {
         height: 28vw;
-        bottom: 227px;
+        bottom: 380px;
     }
 
     .topline__header {
@@ -845,87 +850,96 @@
     }
 
     .topline__content {
-        padding-bottom: 52vw;
+        padding-bottom: 9vw;
     }
 
     .bird {
-        margin-top: 150px;
+        margin-top: 75px;
+        width: 150px;
     }
 
     .topline__subtitle {
-        font-size: 6vw;
+        font-size: 4vw;
         width: 90%;
     }
 
     .about {
-        padding: 30px;
-        flex-direction: column;
+        padding: 20px;
     }
 
     .about__title {
         margin: 0 0 30px;
-        font-size: 9vw;
+        font-size: 4vw;
     }
 
     .about__text {
         margin-right: 0;
-        width: 100%;
+        width: 50%;
     }
 
     .about-book__book {
         width: 100%;
+        position: absolute;
+        top: -13px;
+        left: -5px;
     }
 
     .about__book {
-        position: relative;
-        width: 100%;
-        left: 0;
-        top: 20px;
+        position: absolute;
+        width: 70%;
+        left: 190px;
+        top: -23px;
         padding: 20px 0;
+        height: auto;
     }
 
     .about__description {
-        font-size: 5vw;
-        line-height: 8vw;
+        font-size: 2.5vw;
+        line-height: 4vw;
     }
 
     .about__realg {
         bottom: -32px;
-        width: 33vw;
+        width: 19vw;
+        right: 14px;
     }
 
     .about-book {
-        padding: 100px 30px;
-        flex-direction: column;
+        padding: 50px 20px;
     }
 
     .about__realg_about-book {
-        bottom: 30px;
-        width: 15vw;
+        bottom: 11px;
+        width: 7vw;
+        left: 6px;
     }
 
     .about-book__text {
-        text-align: center;
-        width: 100%;
+        text-align: right;
+        width: 60%;
     }
 
     .about-book__description {
-        font-size: 5vw;
+        font-size: 2.5vw;
+        text-align: right;
+        margin: 0 0 20px;
     }
 
     .about-book__title {
-        margin: 50px 0 50px;
+        font-size: 6vw;
+        text-align: right;
+        margin: 0 0 20px;
     }
 
     .about-book__container {
-        width: 100%;
-        height: 107vw;
-        margin: auto;
+        width: 40%;
+        height: 45vw;
+        margin: 0 auto;
     }
 
     .about__price {
-        top: 305px;
-        width: 35vw;
+        top: 112px;
+        width: 16vw;
         right: -21px;
     }
 
@@ -933,18 +947,10 @@
         left: 11px;
     }
 
-    .about-book__title {
-        font-size: 22vw;
-    }
-
-    .about-book__description {
-        font-size: 6vw;
-    }
-
     .about-book__button {
-        font-size: 8vw;
+        font-size: 3vw;
         padding: 10px 20px 10px 50px;
-        width: 87%;
+        width: 65%;
     }
 
 
@@ -952,12 +958,12 @@
 
 
     .info {
-        padding: 50px;
-        grid-template-columns: 1fr;
+        padding: 20px;
+        grid-template-columns: 1fr 1fr;
     }
 
     .info__third {
-        margin-top: 30px;
+        margin-top: -20px;
     }
 
     .info__fourth {
@@ -965,33 +971,34 @@
     }
 
     .info__fifth {
-        margin-top: 30px;
+        margin-top: -26px;
     }
 
     .audio-section {
-        flex-direction: column;
-        padding: 50px 30px 50px;
+        padding: 20px 20px 50px;
     }
 
     .audio-section__audio {
-        width: 100%;
+        width: 50%;
         padding: 10px;
-        margin-bottom: 50px;
+        height: 50px;
+        border-radius: 15px;
     }
 
     .order {
-        flex-direction: column;
-        width: calc(100% - 120px);
+        width: calc(100% - 40px);
         max-width: 1672px;
-        padding: 40px;
-        text-align: center;
+        padding: 10px;
+        text-align: left;
+        border-radius: 10px;
     }
 
     .order__title {
         width: fit-content;
         max-width: 100%;
         align-items: center;
-        margin: 0 auto 30px;
+        margin: 0 10px 0 0;
+        text-align: right;
     }
 
     .order__form {
@@ -1000,6 +1007,14 @@
 
     .order__input, .order__submit {
         font-size: 4vw;
+    }
+    
+    .order__submit {
+        margin-bottom: 12px;
+    }
+
+    .order__input {
+        margin-bottom: 5px;
     }
 
     .section-title_real {
@@ -1010,22 +1025,37 @@
         text-align: center;
     }
 
+    .logos img {
+        width: 32%;
+    }
+
     .section-order {
         margin-bottom: 50px;
     }
 
     .audio-section__author {
-        width: 80vw;
-        height: 80vw;
+        width: 30vw;
+        height: 30vw;
+        background-position-y: -196px;
+        background-size: cover;
     }
 
     .playBtn, .pauseBtn {
-        height: 48px;
-        margin-right: 10px;
+        height: 30px;
+        margin-right: 5px;
     }
 
     .section-title {
-        font-size: 7vw;
+        font-size: 4vw;
+        margin: 20px auto;
+    }
+
+    .section-title_author {
+        font-size: 8vw;
+    }
+
+    #wavwform {
+        height: 50px;
     }
 }
 
