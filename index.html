@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="vendor/normalaize.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./vendor/normalaize.css">
+    <link rel="stylesheet" href="./style.css">
 
     <script src="https://unpkg.com/wavesurfer.js"></script>
 
@@ -90,7 +90,7 @@
                 <img src="./images/play.png" alt="" class="playBtn">
                 <img src="./images/pause.png" alt="" class="pauseBtn invisible">
             </div>
-            <div id="waveform"></div>
+            <div id="waveform" class="waveform"></div>
         </div>
         <div class="audio-section__author"></div>
     </div>
@@ -114,9 +114,16 @@
     </div>
 
     <div class="logos">
-        <img src="./images/logo-1.png" alt="" class="logos__logo">
-        <img src="./images/logo-2.png" alt="" class="logos__logo">
-        <img src="./images/logo-3.png" alt="" class="logos__logo">
+        <a href="https://youtube.com/@user-zw6tn9bk2b" target="_blank"><img src="./images/logo-1.png" alt="" class="logos__logo"></a>
+        <a href="https://instagram.com/avg_officialpage?igshid=MjkzY2Y1YTY=" target="_blank"><img src="./images/logo-2.png" alt="" class="logos__logo"></a>
+        <a href="https://instagram.com/skv1z?igshid=MjkzY2Y1YTY=" target="_blank"><img src="./images/logo-3.png" alt="" class="logos__logo"></a>
+    </div>
+
+    <p class="kass">КАСС</p>
+
+    <div class="logos">
+        <a href="https://instagram.com/kass_my_ass_?igshid=NDk5N2NlZjQ=" target="_blank"><img src="./images/instagram_icon.svg" alt="" class="logos__logo logos__logo_social"></a>
+        <a href="https://mobile.twitter.com/kass_my_ass" target="_blank"><img src="./images/twitter_social_icon.svg" alt="" class="logos__logo logos__logo_social"></a>
     </div>
 
 </main>
@@ -136,8 +143,8 @@
             container: document.querySelector('#waveform'),
             waveColor: 'white',
             progressColor: 'gray',
-            barWidth: 2,
             height: 68,
+            barWidth: 3,
             barGap: null,
             responsive: true
         })
@@ -164,21 +171,30 @@ document.querySelectorAll('a[href^="#"').forEach(link => {
 link.addEventListener('click', function(e) {
     e.preventDefault();
 
-    let href = this.getAttribute('href').substring(1);
+    if(link.classList.contains('scrollto')) {
+        let href = this.getAttribute('href').substring(1);
 
-    const scrollTarget = document.getElementById(href);
+const scrollTarget = document.getElementById(href);
 
-    const topOffset = document.querySelector('.scrollto').offsetHeight;
-    // const topOffset = 0; // если не нужен отступ сверху 
-    const elementPosition = scrollTarget.getBoundingClientRect().top;
-    const offsetPosition = elementPosition - topOffset;
+const topOffset = document.querySelector('.scrollto').offsetHeight;
+// const topOffset = 0; // если не нужен отступ сверху 
+const elementPosition = scrollTarget.getBoundingClientRect().top;
+const offsetPosition = elementPosition - topOffset;
 
-    window.scrollBy({
-        top: offsetPosition,
-        behavior: 'smooth'
-    });
+window.scrollBy({
+    top: offsetPosition,
+    behavior: 'smooth'
+});
+    }
+
+
 });
 });
+
+
+let www = document.querySelector('#waveform');
+console.log(www.firstChild);
+
     </script>
 
 </body>
