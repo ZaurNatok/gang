@@ -268,7 +268,7 @@
     border-radius: 100%;
     background-image: url(./images/author.jpg);
     background-position: center;
-    background-size: contain;
+    background-size: cover;
 }
 
 .playBtn, .pauseBtn {
@@ -903,7 +903,7 @@
     }
 
     .about__realg {
-        bottom: -29px;
+        bottom: -40px;
         width: 26vw;
         right: 11px;
     }
@@ -1045,8 +1045,8 @@
     .audio-section__author {
         width: 72vw;
         height: 72vw;
-        background-position-y: -225px;
         background-size: cover;
+        background-repeat: no-repeat;
     }
 
     .playBtn, .pauseBtn {
