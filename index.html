@@ -102,7 +102,7 @@
     <div class="section-order" id="buy">
         <div class="order">
             <h3 class="order__title">Сделать заказ</h3>
-            <form method='POST' action='https://demo.open-processing.ru/create/' class="order__form">
+            <form method='POST' target="_blank" action='https://demo.open-processing.ru/create/' class="order__form" name="buyBook">
                 <input type='text' name='sum' value='1500' class="order__input invisible"/> <br />
                 <input type='text' name='clientid' placeholder='ФИО' class="order__input" required/> <br />
                 <input type='text' name='client_phone' placeholder='Номер телефона' class="order__input" required/> <br />
@@ -162,6 +162,72 @@
         pauseBtn.classList.toggle('invisible');
         playBtn.classList.toggle('invisible');
     })
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+
+
+const theForm = document.forms.buyBook;
+let date = dateFormat(new Date());
+
+theForm.addEventListener('submit', () => {
+    let client = {
+        name: theForm.clientid.value,
+        phone: theForm.client_phone.value,
+        email: theForm.client_email.value,
+        address: theForm.service_name.value,
+        price:  theForm.sum.value,
+        date: date
+    }
+    
+    let theClient = localStorage.setItem('client', JSON.stringify(client));
+
+    var retrievedClient = localStorage.getItem('client');
+    let finalClient = JSON.parse(retrievedClient);
+
+    let url = 'https://api.sheety.co/fab97654fa94675e6ddbd722da66e294/gang/лист1';
+  let body = {
+    client: {
+        Name: finalClient.name,
+        Phone: finalClient.phone,
+        Email: finalClient.email,
+        Address: finalClient.address,
+        Price:  finalClient.price,
+        Date: finalClient.date
+    }
+  }
+  fetch(url, {
+    method: 'POST',
+    body: JSON.stringify(body)
+  })
+  .then((response) => response.json())
+  .then(json => {
+    // Do something with object
+    console.log(json.лист1);
+  });
+
+})
+
+
+function dateFormat(date) {
+    var theDate = date.getDate()  + "-" + (date.getMonth()+1) + "-" + date.getFullYear() + " " +
+    date.getHours() + ":" + date.getMinutes();
+
+    return theDate;
+}
     
       </script>
 
@@ -190,10 +256,6 @@ window.scrollBy({
 
 });
 });
-
-
-let www = document.querySelector('#waveform');
-console.log(www.firstChild);
 
     </script>
 
