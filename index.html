@@ -128,8 +128,6 @@
 
 </main>
 
-<div class="try">а ну ка</div>
-
 <body>
 
   <script>
@@ -162,34 +160,18 @@
         pauseBtn.classList.toggle('invisible');
         playBtn.classList.toggle('invisible');
     })
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-
-
 
 const theForm = document.forms.buyBook;
 let date = dateFormat(new Date());
 
-document.querySelector('.try').addEventListener('click', () => {
+theForm.addEventListener('submit', () => {
+        
     let clientInfo = {
         name: theForm.clientid.value,
         phone: theForm.client_phone.value,
         email: theForm.client_email.value,
         address: theForm.service_name.value,
-        price:  theForm.sum.value,
+        price: theForm.sum.value,
         date: date
     }
     
@@ -199,26 +181,28 @@ document.querySelector('.try').addEventListener('click', () => {
     let finalClient = JSON.parse(retrievedClient);
 
     let url = 'https://api.sheety.co/fab97654fa94675e6ddbd722da66e294/gang/clients';
-  let body = {
-        "client": {
-            "name": finalClient.name,
-            "phone": finalClient.phone,
-            "email": finalClient.email,
-            "address": finalClient.address,
-            "price":  finalClient.price,
-            "date": finalClient.date
-        }
+    let body = {
+            "client": {
+                "name": finalClient.name,
+                "phone": finalClient.phone,
+                "email": finalClient.email,
+                "address": finalClient.address,
+                "price":  finalClient.price,
+                "date": finalClient.date
+            }
   }
  
   fetch(url, {
     method: 'POST',
+    headers: {
+        'Content-Type':'application/json'
+    },
     body: JSON.stringify(body)
   })
   .then((response) => response.json())
   .then(json => {
     // Do something with object
-    console.log(body);
-    console.log(json.clients);
+    console.log(json.client);
   });
 
 })
