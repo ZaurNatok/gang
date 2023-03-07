@@ -843,12 +843,12 @@
 @media (min-width: 320px) and (max-width: 479px) {
 
     .topline {
-        height: 60vh;
+        height: 77vh;
     }
 
     .wire {
         height: 28vw;
-        bottom: 380px;
+        bottom: 270px;
     }
 
     .topline__header {
@@ -868,7 +868,7 @@
 
     .bird {
         margin-top: 20vw;
-        width: 26vw;
+        width: 39vw;
     }
 
     .topline__subtitle {
