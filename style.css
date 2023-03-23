@@ -5,6 +5,8 @@
 
 }
 
+
+
 .thanks {
     text-align: center;
     height: 100vh;
@@ -380,6 +382,38 @@
     margin-bottom: 290px;
 }
 
+.kass {
+    position: relative;
+    font-size: 7vw;
+}
+
+.whoIsKass {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding: 50px 100px;
+    align-items: center;
+}
+
+.whoIsKass img {
+    width: 17vw;
+}
+
+.arrow {
+    position: absolute;
+    width: 33vw;
+    top: -452px;
+    left: 649px;
+}
+
+
+@media screen and (min-width:1920px) {
+    .arrow {
+        position: absolute;
+        width: 26vw;
+        top: -452px;
+        left: 849px;
+    }
+}
 
 @media screen and (min-width:1441px) {
     .about__text {
@@ -438,8 +472,6 @@
         font-size: 4vw;
     }
 }
-
-
 
 @media (min-width: 992px) and (max-width: 1439px) {
 
@@ -548,6 +580,13 @@
 
     .order__title {
         margin: 0 50px 0 0;
+    }
+
+    .arrow {
+        position: absolute;
+        width: 26vw;
+        top: -253px;
+        left: 460px;
     }
 }
 
@@ -669,6 +708,13 @@
     .order__title {
         max-width: 40%;
         margin: 0 50px 0 0;
+    }
+
+    .arrow {
+        position: absolute;
+        width: 29vw;
+        top: -253px;
+        left: 367px;
     }
 }
 
@@ -838,6 +884,14 @@
     .section-title {
         max-width: calc(100% - 60px);
     }
+
+    .arrow {
+        position: absolute;
+        width: 46vw;
+        top: -253px;
+        left: 36px;
+        rotate: -35deg;
+    }
 }
 
 @media (min-width: 320px) and (max-width: 479px) {
@@ -966,10 +1020,6 @@
         width: 65%;
     }
 
-
-
-
-
     .info {
         padding: 20px;
         grid-template-columns: 1fr 1fr;
@@ -1078,6 +1128,22 @@
 
     #wavwform {
         height: 50px;
+    }
+
+
+    .whoIsKass {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        padding: 50px 30px;
+        align-items: center;
+    }
+
+    .arrow {
+        position: absolute;
+        width: 45vw;
+        top: -170px;
+        left: 47px;
+        rotate: -50deg;
     }
 }
 
